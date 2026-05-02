@@ -1,4 +1,4 @@
-# 🛡️ Santhosh AI — Security & Fraud Intelligence Platform
+# 🛡️ Santhosh AI  Security & Fraud Intelligence Platform
 
 <div align="center">
 
