@@ -254,8 +254,6 @@ Test coverage includes:
 ---
 
 ## 🏗️ Architecture
-![Uploading santhosh_ai_architecture.svg…]()
-
 Every box is clickable — tap any component to ask a deep-dive question about it.
 Here's how the full system flows top to bottom:
 Tier 1 — Entry points. Three ways in: the React browser dashboard, the santhosh CLI tool, and CI/CD pipelines (GitHub Actions). All three hit the same FastAPI gateway.
