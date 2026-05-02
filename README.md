@@ -254,17 +254,8 @@ Test coverage includes:
 ---
 
 ## 🏗️ Architecture
-Every box is clickable — tap any component to ask a deep-dive question about it.
-Here's how the full system flows top to bottom:
-Tier 1 — Entry points. Three ways in: the React browser dashboard, the santhosh CLI tool, and CI/CD pipelines (GitHub Actions). All three hit the same FastAPI gateway.
-Tier 2 — Gateway. FastAPI handles auth, RBAC, rate limiting, and routes scan jobs to the orchestrator. The React dashboard talks directly over REST.
-Tier 3 — Orchestrator. The scan orchestrator collects files, dispatches all 8 engines in parallel, deduplicates findings by (rule_id, file_path, line_number), and computes the final scores.
-Tier 4 — Engines (two rows). Split by category — coral for pure security engines (Static Analyzer, Taint Flow, Secrets Scanner, Prompt Injection), amber for fraud/behavioral engines (Fraud Intelligence, Supply Chain, Bash Analyzer, Bytecode Integrity).
-Tier 5 — LLM Enrichment. All findings from all engines funnel into the Claude-powered Phase 2 enrichment layer for false-positive reduction, correlation grouping, and final verdict scoring.
-Tier 6 — Policy + Rules + Storage. The YAML policy engine controls which rules fire and at what threshold. Rule packs (589 YARA + Python rules) feed the engines. Results persist to SQLite/Postgres.
-Tier 7 — Scoring model. Unified risk score, fraud score, and analyzability score are computed and stamped on the result.
-Tier 8 — Outputs. SARIF (GitHub Security), JSON, HTML report, and direct GitHub Advanced Security upload.
-```
+
+#############
 santhosh-ai/
 ├── backend/                  # FastAPI backend
 │   ├── main.py               # App entry point
